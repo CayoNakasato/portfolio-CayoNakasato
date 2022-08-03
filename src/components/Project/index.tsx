@@ -16,9 +16,11 @@ interface ReposType {
   name: string;
   language: string;
   description: string;
-  git_url: string;
+  html_url: string;
   homepage: string;
+  pages: string;
 }
+
 
 export const Project = (): JSX.Element => {
   const [repositories, setRepositories] = useState<ReposType[]>([]);
@@ -42,44 +44,47 @@ export const Project = (): JSX.Element => {
     fetchData();
   }, []);
 
+  
   return (
     <>
       {repositories?.map((repository) => (
-        <ProjectWrapper key={repository.id}>
+        <ProjectWrapper key={repository?.id}>
+          
           <Text
             as="h2"
             type="heading3"
             css={{ marginBottom: "$3" }}
             color="grey1"
-          >
-            {repository.name}
+            >
+            {repository?.name}
           </Text>
 
-          {repository.language && (
+          {repository?.language && (
             <ProjectStack>
               <Text type="body2">Linguagem:</Text>
               <ProjectStackTech>
                 <Text color="brand1" type="body2">
-                  {repository.language}
+                  {repository?.language}
                 </Text>
               </ProjectStackTech>
             </ProjectStack>
           )}
 
           <Text type="body1" color="grey2">
-            {repository.description}
+            {repository?.description}
           </Text>
           <ProjectLinks>
-            <ProjectLink target="_blank" href={repository.git_url}>
+            <ProjectLink target="_blank" href={repository?.html_url}>
               <FaGithub /> Github Code
             </ProjectLink>
-            {repository.homepage && (
-              <ProjectLink target="_blank" href={repository.homepage}>
+            {repository?.html_url && (
+              <ProjectLink target="_blank" href={'https://cayonakasato.github.io/E-Commerce-WearTake/'}>
                 <FaShare /> Aplicação
               </ProjectLink>
             )}
           </ProjectLinks>
         </ProjectWrapper>
+        
       ))}
     </>
   );
