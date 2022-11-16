@@ -44,10 +44,13 @@ export const Project = (): JSX.Element => {
     fetchData();
   }, []);
 
+
+
   
   return (
     <>
       {repositories?.map((repository) => (
+  
         <ProjectWrapper key={repository?.id}>
           
           <Text
@@ -74,11 +77,11 @@ export const Project = (): JSX.Element => {
             {repository?.description}
           </Text>
           <ProjectLinks>
-            <ProjectLink target="_blank" href={repository?.html_url}>
+            <ProjectLink target="_blank" href={repository.html_url}>
               <FaGithub /> Github Code
             </ProjectLink>
             {repository?.html_url && (
-              <ProjectLink target="_blank" href={'https://cayonakasato.github.io/E-Commerce-WearTake/'}>
+              <ProjectLink target="_blank" href={repository.homepage}>
                 <FaShare /> Aplicação
               </ProjectLink>
             )}
