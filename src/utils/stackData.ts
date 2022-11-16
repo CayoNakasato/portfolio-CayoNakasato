@@ -4,10 +4,11 @@ import imgJS from "../public/static/img/stack/js.svg";
 import imgNode from "../public/static/img/stack/node.svg";
 import imgStyled from "../public/static/img/stack/styled.svg";
 import imgReact from "../public/static/img/stack/react.svg";
-import { DiReact } from "react-icons/di";
-import { SiTypescript } from "react-icons/si";
-import { SiRedux } from "react-icons/si";
+import { DiReact, DiDjango, DiPostgresql } from "react-icons/di";
 import { AiFillGithub } from "react-icons/ai";
+import { SiPython, SiExpress, SiRedux, SiTypescript } from "react-icons/si"
+import { FaNode } from "react-icons/fa"
+
 
 export const stackData = [
   {
@@ -45,5 +46,20 @@ export const stackData = [
   },
   { title: "TypeScript",
    img: SiTypescript
+  },
+  { title: "Python",
+   img: SiPython
+  },
+  { title: "Node.js",
+   img: FaNode
+  },
+  { title: "Express.js",
+   img: SiExpress
+  },
+  { title: "Django",
+   img: DiDjango
+  },
+  { title: "PostgreSQL",
+   img: DiPostgresql
   },
 ];
